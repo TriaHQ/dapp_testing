@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 body {
   background-color: black;
   overflow-y: hidden;
+  overflow-x: auto;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -23,21 +21,19 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
-
-
 
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
-  inherits: false
+  inherits: false;
 }
 
 @keyframes rotate-animation {
   to {
-    --angle: 360deg
+    --angle: 360deg;
   }
 }
 
@@ -45,58 +41,56 @@ input[type=number] {
   content: "";
   --angle: 0deg;
   border-radius: 78px;
-  @apply absolute inset-0 z-0 bg-gradient-to-r from-[##FF4E17] via-[#000000] to-[#000000]
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-[##FF4E17] via-[#000000] to-[#000000];
 }
 
 .bg-animation-purple:after {
   content: "";
   --angle: 0deg;
   border-radius: 78px;
-  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
 }
 
 .bg-animation-green:after {
   content: "";
   --angle: 0deg;
   border-radius: 78px;
-  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
 }
 
 .bg-animation-pink:after {
   content: "";
   --angle: 0deg;
   border-radius: 78px;
-  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
 }
-
 
 .bg-animation-orange:after {
   animation: rotate-animation 6s linear infinite;
-  background: linear-gradient(var(--angle), #FF4E17, #000000, #000000, #000000);
+  background: linear-gradient(var(--angle), #ff4e17, #000000, #000000, #000000);
 }
 
 .bg-animation-purple:after {
   animation: rotate-animation 6s linear infinite;
-  background: linear-gradient(var(--angle), #7D40FF, #000000, #000000, #000000);
+  background: linear-gradient(var(--angle), #7d40ff, #000000, #000000, #000000);
 }
 
 .bg-animation-green:after {
   animation: rotate-animation 6s linear infinite;
-  background: linear-gradient(var(--angle), #D7FF01, #000000, #000000, #000000);
+  background: linear-gradient(var(--angle), #d7ff01, #000000, #000000, #000000);
 }
 
 .bg-animation-pink:after {
   animation: rotate-animation 6s linear infinite;
-  background: linear-gradient(var(--angle), #FF249D, #000000, #000000, #000000);
+  background: linear-gradient(var(--angle), #ff249d, #000000, #000000, #000000);
 }
-
 
 .blur-background {
   filter: blur(5px);
 }
 
 .background-container-orange {
-  background-image: url('/public/icons/card.svg');
+  background-image: url("/public/icons/card.svg");
   /* Add your image path */
   background-size: cover;
   /* Adjust as needed */
@@ -111,7 +105,7 @@ input[type=number] {
 }
 
 .background-container-purple {
-  background-image: url('/public/icons/card_purple.svg');
+  background-image: url("/public/icons/card_purple.svg");
   /* Add your image path */
   background-size: cover;
   /* Adjust as needed */
@@ -126,7 +120,7 @@ input[type=number] {
 }
 
 .background-container-green {
-  background-image: url('/public/icons/card_green.svg');
+  background-image: url("/public/icons/card_green.svg");
   /* Add your image path */
   background-size: cover;
   /* Adjust as needed */
@@ -141,7 +135,7 @@ input[type=number] {
 }
 
 .background-container-pink {
-  background-image: url('/public/icons/card_pink.svg');
+  background-image: url("/public/icons/card_pink.svg");
   /* Add your image path */
   background-size: cover;
   /* Adjust as needed */
@@ -156,7 +150,7 @@ input[type=number] {
 }
 
 .background-container-back {
-  background-image: url('/public/icons/grey_rotate.svg');
+  background-image: url("/public/icons/grey_rotate.svg");
   /* Add your image path */
   background-size: cover;
   /* Adjust as needed */
@@ -169,7 +163,6 @@ input[type=number] {
   align-items: center;
   justify-content: center;
 }
-
 
 .reveal {
   position: relative;
@@ -231,8 +224,6 @@ input[type=number] {
 .flip-card {
   background-color: transparent;
   width: 50%;
-
-
 }
 
 .flip-card-inner {
@@ -243,7 +234,6 @@ input[type=number] {
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
-
 
 .flip-card-inner.is-flipped {
   transform: rotateY(180deg);
@@ -262,24 +252,26 @@ input[type=number] {
   backface-visibility: hidden;
 }
 
-
 .flip-card-back {
   transform: rotateY(180deg);
 }
 
-
 .cards:hover .card {
-  background: radial-gradient(100rem circle at var(--xPos) var(--yPos),
-      rgba($ciBlue, 0.4),
-      transparent 15%);
+  background: radial-gradient(
+    100rem circle at var(--xPos) var(--yPos),
+    rgba($ciBlue, 0.4),
+    transparent 15%
+  );
 }
 
 .cards .card {
   width: 20rem;
   height: 15rem;
-  background: radial-gradient(150rem circle at 0 0,
-      rgba($ciBlue, 0),
-      transparent 0%);
+  background: radial-gradient(
+    150rem circle at 0 0,
+    rgba($ciBlue, 0),
+    transparent 0%
+  );
   border-radius: 0.5rem;
   display: flex;
   justify-content: center;
@@ -304,9 +296,11 @@ input[type=number] {
   top: 0;
   left: 0;
   border-radius: inherit;
-  background: radial-gradient(60rem circle at var(--xPos) var(--yPos),
-      rgba("#FFFFFF", 0.1),
-      transparent 35%);
+  background: radial-gradient(
+    60rem circle at var(--xPos) var(--yPos),
+    rgba("#FFFFFF", 0.1),
+    transparent 35%
+  );
   opacity: 0;
   transition: all 0.15s ease-in-out;
 }
@@ -320,25 +314,25 @@ input[type=number] {
 }
 
 .orange_gradient_text {
-  background: linear-gradient(to right, #FF4E17, #FFBC39, #FF4E17);
+  background: linear-gradient(to right, #ff4e17, #ffbc39, #ff4e17);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .purple_gradient_text {
-  background: linear-gradient(to right, #6445FF, #BCAEFF, #6445FF);
+  background: linear-gradient(to right, #6445ff, #bcaeff, #6445ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .green_gradient_text {
-  background: linear-gradient(to right, #D7FF01, #eeff8f, #D7FF01);
+  background: linear-gradient(to right, #d7ff01, #eeff8f, #d7ff01);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .pink_gradient_text {
-  background: linear-gradient(to right, #AD1B6B,#ff76c1, #E52B92 );
+  background: linear-gradient(to right, #ad1b6b, #ff76c1, #e52b92);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
