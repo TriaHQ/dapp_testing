@@ -400,8 +400,11 @@ const Home = () => {
       // if (event.origin !== "http://expected-origin.com") return;
 
       if (event.data.type === "PROFILE_PHOTO_UPDATED") {
-        console.log("Profile photo updated:", event.data.payload.avatar);
         // Perform actions based on the updated profile photo
+
+        getTriaImage(
+          JSON.parse(localStorage.getItem("tria.wallet.store"))?.triaName
+        );
       }
     };
 
