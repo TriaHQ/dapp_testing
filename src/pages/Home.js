@@ -418,7 +418,7 @@ const Home = () => {
     return () => {
       window.removeEventListener("message", handleMessage);
     };
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []);
 
   return (
     <>
