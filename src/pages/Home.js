@@ -399,9 +399,12 @@ const Home = () => {
       // Check the origin if necessary for security purposes
       // if (event.origin !== "http://expected-origin.com") return;
 
+      if (event.origin !== "https://staging-tria-wallet.vercel.app") {
+        return;
+      }
+
       if (event.data.type === "PROFILE_PHOTO_UPDATED") {
         // Perform actions based on the updated profile photo
-
         getTriaImage(
           JSON.parse(localStorage.getItem("tria.wallet.store"))?.triaName
         );
