@@ -405,6 +405,7 @@ const Home = () => {
 
       if (event.data.type === "PROFILE_PHOTO_UPDATED") {
         // Perform actions based on the updated profile photo
+
         getTriaImage(
           JSON.parse(localStorage.getItem("tria.wallet.store"))?.triaName
         );
@@ -418,7 +419,7 @@ const Home = () => {
     return () => {
       window.removeEventListener("message", handleMessage);
     };
-  }, []);
+  }, []); // Empty dependency array means this effect runs once on mount
 
   return (
     <>
@@ -504,7 +505,7 @@ const Home = () => {
           >
             <div
               onClick={() => Logout()}
-              className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex"
+              className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 flex-col justify-center items-center gap-[52px] inline-flex"
             >
               <div className="self-stretch py-1 justify-start items-center inline-flex">
                 <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
@@ -528,7 +529,7 @@ const Home = () => {
             <div className="w-[140vw] 3xl:w-[90vw] 4xl:w-[90vw] md:grid md:grid-cols-12 gap-5 mt-20 ">
               <div className="md:col-span-4 mt-10 ml-10">
                 <div className="w-full h-[45vh] 3xl:h-[50vh] 4xl:h-[50vh] relative rounded-xl ">
-                  <div className="w-full h-full overflow-hidden px-5 py-4 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] left-0 top-0 absolute bg-transparent rounded-xl border border-neutral-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[34px] inline-flex">
+                  <div className="w-full h-full overflow-hidden px-5 py-4 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] left-0 top-0 absolute bg-transparent rounded-xl border border-neutral-800 flex-col justify-center items-center gap-[34px] inline-flex">
                     {walletColor === "#FF4E17" ? (
                       <img
                         className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6  "
@@ -575,7 +576,7 @@ const Home = () => {
                 </div>
                 <div className="w-full justify-between items-start gap-5 flex mt-5 ">
                   <div className="w-full h-full relative group rounded-xl hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
-                    <div className="w-full h-[35vh] overflow-hidden group p-7 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid backdrop-blur-[100px] flex-col justify-start items-start gap-[52px] inline-flex">
+                    <div className="w-full h-[35vh] overflow-hidden group p-7 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid flex-col justify-start items-start gap-[52px] inline-flex">
                       {walletColor === "#FF4E17" ? (
                         <img
                           className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6"
@@ -1052,7 +1053,7 @@ const Home = () => {
                     background:
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
-                  className="w-full mt-5 p-2 3xl:h-[33vh] h-[28vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex"
+                  className="w-full mt-5 p-2 3xl:h-[33vh] h-[28vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 flex-col justify-between items-center inline-flex"
                 >
                   <div className="absolute top-3 right-3">
                     <select
@@ -1124,7 +1125,7 @@ const Home = () => {
                     background:
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
-                  className="w-full overflow-hidden group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] h-[50vh] 3xl:h-[53vh] p-4 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex"
+                  className="w-full overflow-hidden group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] h-[50vh] 3xl:h-[53vh] p-4 bg-opacity-70 rounded-xl border border-stone-800  flex-col justify-between items-center inline-flex"
                 >
                   <div className="">
                     <div className="">
@@ -1370,7 +1371,7 @@ const Home = () => {
                     background:
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
-                  className="w-full h-[52vh] p-5 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-start items-center gap-5 inline-flex"
+                  className="w-full h-[52vh] p-5 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl border border-stone-800 flex-col justify-start items-center gap-5 inline-flex"
                 >
                   <div className=" h-full flex-col gap-4 items-center flex">
                     <div className="self-stretch gap-4 flex mb-2">
@@ -1456,7 +1457,7 @@ const Home = () => {
                     background:
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
-                  className="w-full mt-5 p-2 h-[28vh] 3xl:h-[33vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex"
+                  className="w-full mt-5 p-2 h-[28vh] 3xl:h-[33vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 flex-col justify-between items-center inline-flex"
                 >
                   <div className="">
                     <div className="">
@@ -2272,7 +2273,7 @@ const Home = () => {
                       background:
                         "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
                     }}
-                    className="w-full  p-3 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex"
+                    className="w-full  p-3 bg-opacity-70 rounded-xl border border-stone-800  flex-col justify-between items-center inline-flex"
                   >
                     <div className="self-stretch h-[385px] flex-col justify-start items-center gap-9 flex">
                       <div className="self-stretch h-[137px] flex-col justify-start items-center gap-6 flex">
@@ -2354,7 +2355,7 @@ const Home = () => {
                       background:
                         "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
                     }}
-                    className="w-full  p-4  rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-start items-center gap-5 inline-flex"
+                    className="w-full  p-4  rounded-xl border border-stone-800 flex-col justify-start items-center gap-5 inline-flex"
                   >
                     <div className=" h-[20vh] relative mb-5 mt-2">
                       <img
@@ -2458,7 +2459,7 @@ const Home = () => {
                 {/* <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
-                }} className="w-full mt-5 p-4 4xl:h-[270px] 3xl:h-[260px] md:h-[220px] rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
+                }} className="w-full mt-5 p-4 4xl:h-[270px] 3xl:h-[260px] md:h-[220px] rounded-xl border border-stone-800 flex-col justify-center items-center gap-[52px] inline-flex">
                   <div className="self-stretch  flex-col justify-start items-center gap-0 flex">
                     <div className="self-stretch flex-col justify-start items-center gap-0 flex">
                       <div className="self-stretch py-2 justify-center items-center  inline-flex">
