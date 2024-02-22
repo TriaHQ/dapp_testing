@@ -367,18 +367,22 @@ const Home = () => {
     const body = document.body;
 
     const handleWheel = (event) => {
-      // Check if the vertical scrollbar is present
-      const hasVerticalScrollbar = window.innerHeight < body.scrollHeight;
+      // Check if the vertical scrollbar is presen
+      const hasVerticalScroll = windowSize.innerWidth < 1200;
 
       // If a vertical scrollbar is present, do nothing
-      if (hasVerticalScrollbar) {
+      if (hasVerticalScroll) {
         return;
       }
       // Prevent default scroll behavior
       event.preventDefault();
 
       // Calculate the desired horizontal scroll amount
-      const scrollAmount = event.deltaY;
+      let scrollAmount = event.deltaY * 4;
+      if (event.deltaMode === 1) {
+        // Adjust scrollAmount if deltaMode is not "pixel"
+        scrollAmount *= 40; // Assuming a line height of 40px
+      }
 
       // Apply the horizontal scroll
       window.scrollBy({ left: scrollAmount, behavior: "smooth" });
@@ -392,7 +396,7 @@ const Home = () => {
     return () => {
       body.removeEventListener("wheel", handleWheel);
     };
-  }, []);
+  }, [windowSize]);
 
   useEffect(() => {
     const handleMessage = (event) => {
