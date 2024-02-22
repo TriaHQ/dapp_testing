@@ -505,7 +505,7 @@ const Home = () => {
           >
             <div
               onClick={() => Logout()}
-              className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 flex-col justify-center items-center gap-[52px] inline-flex"
+              className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 flex-col justify-center items-center gap-[52px] inline-flex backdrop-blur-[100px]"
             >
               <div className="self-stretch py-1 justify-start items-center inline-flex">
                 <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
